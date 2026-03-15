@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Risk Predictor</title>
+</head>
+<body>
+    <h1>❤️ Heart Attack Risk Prediction from Retinal Image</h1>
+    <p>Upload a Retinal Fundus Image (JPG/PNG) to predict the risk level (Low Risk or High Risk).</p>
+    
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Predict Risk</button>
+    </form>
+
+    <hr>
+    <h3>Project Status</h3>
+    <p>Model (model.h5) is loaded and ready for prediction.</p>
+</body>
+</html>

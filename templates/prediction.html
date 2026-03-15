@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>✅ Prediction Complete</h1>
+    
+    <img src="{{ image_file }}" alt="Uploaded Retinal Image" style="max-width: 400px; height: auto;">
+    
+    <h2>Predicted Risk: <span style="color: {{ 'red' if 'High_Risk' in prediction else 'green' }};">{{ prediction }}</span></h2>
+    
+    <p>Confidence Level: <strong>{{ confidence }}%</strong></p>
+    
+    {% if 'High_Risk' in prediction %}
+        <p style="color: red; font-weight: bold;">⚠️ WARNING: The predicted risk is High. This suggests signs of vascular disease in the retina. Please consult a specialist.</p>
+    {% else %}
+        <p style="color: green; font-weight: bold;">✅ Low Risk Predicted. The retina appears healthy based on the model.</p>
+    {% endif %}
+    
+    <hr>
+    <a href="{{ url_for('index') }}">Go back and try another image</a>
+</body>
+</html>
